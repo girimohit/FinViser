@@ -16,4 +16,6 @@ urlpatterns = [
     path("debt-manager", views.debt_manager, name="debt_manager"),
     path("debt-manager/add-loan", views.add_loan, name="add_loan"),
     path("debt-manager/delete-loan/<int:id>", views.delete_loan, name="delete_loan"),
+    path("login-user", views.login_user, name="login_user"),
+    path("register-user", views.register_user, name="register_user"),
 ]

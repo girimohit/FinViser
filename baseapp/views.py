@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 import requests
 import json
 from baseapp.models import DebtManager
+# from baseapp.forms import SignUpForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -10,8 +12,12 @@ def home(request):
     return render(request, "index.html")
 
 
+def register_user(request):
+    return render(request, "auth/signup.html")
+
+
 def login_user(request):
-    return render(request, "login.html")
+    return render(request, "auth/signup.html")
 
 
 def fincalc(request):
@@ -41,6 +47,7 @@ def percent_based(request):
 
 def amount_based(request):
     return render(request, "amount_based.html")
+
 
 def coin_jar(request):
     print("Coin jar started")

@@ -1,0 +1,152 @@
+{% load static %}
+
+<head>
+    <style>
+        /* ----------------------------- FORM PROPERTIES ---------------------------- */
+        #outer-form-div {
+            z-index: 10;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.527);
+            padding-top: 1vw;
+        }
+
+        #inner-form-div {
+            width: 25%;
+            padding: 1.5%;
+            background-color: #d9d9d9;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1vw;
+            font-weight: 900;
+        }
+
+        #signup-form,
+        #login-form {
+            color: black;
+            width: 90%;
+            font-weight: 900;
+            line-height: 1.6vw;
+        }
+
+        #signup-form input:not(#SignUpBtn),
+        #login-form input:not(#SubmitBtn),
+        #signup-form select,
+        #login-form select {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgb(0, 0, 0);
+            width: 100%;
+            font-size: 1vw;
+            font-weight: 700;
+            margin: 0.8vw 0;
+            color: black;
+        }
+
+        #signup-form input:not(#SignUpBtn),
+        #login-form input:not(#SubmitBtn):focus,
+        #signup-form select,
+        #login-form select:focus {
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: #dbb670;
+            color: #025b52;
+            padding: 3% 10%;
+            border: none;
+            width: 60%;
+            border-radius: 10px;
+            font-size: 1vw;
+            font-weight: 900;
+        }
+
+        /* ------------------------------- SIGNUP FORM ------------------------------ */
+        .radio-btn {
+            display: flex;
+            flex-direction: row;
+            padding: 2vw 0.5vw;
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="center-container" id="inner-form-div"> -->
+
+    <!-- <span style="z-index: 10100;" id="close-modal" class="close-modal">x</span> -->
+    <img width="30%" class="icon" src="{% static 'images/trn_logo.png' %}" alt="" />
+    <br /><br />
+
+    <!-- ---------------------------- SIGN UP FORM ----------------------------- -->
+    <form method="POST" id="signup-form" class="signup-form hidden" action="{% url 'accounts:register_user' %}"
+        enctype="multipart/form-data">
+        {% csrf_token %}
+        <div id="radio-btn" class="radio-btn">
+            <input type="radio" name="usertype" id="grassroot" value="grassroot" />Grassroot
+            <input type="radio" name="usertype" id="donor" value="donor" />Donor
+            <input type="radio" name="usertype" id="community" value="community" />Community
+        </div>
+
+        {{ form.as_p }}
+
+        <div id="extra-fields" class="extra-fiedls"></div>
+
+        <input type="submit" class="submit-btn" id="SignUpBtn" value="Sign Up" />
+    </form>
+
+    <!-- ----------------------------- LOGIN FORM ------------------------------ -->
+    <form method="post" id="login-form" action="{% url 'accounts:login_user' %}">
+        <!-- <img width="30%" class="icon" src="{% static 'images/trn_logo.png' %}" alt="" /> -->
+        {% csrf_token %} {{ loginForm.username }}
+        <br />
+        {{ loginForm.password }}
+        <input type="submit" class="submit-btn" id="SubmitBtn" value="Login" />
+    </form>
+
+    <br /><br />
+    <span><a href="#">Forgot Password?</a></span>
+    <span>
+        <span id="is-account">Don't have an account?</span>
+        <span><a href="#" id="SignUpLink">Sign Up</a> </span>
+    </span>
+    <!-- </div> -->
+</body>
+
+<script src="{% static 'js/auth_form.js' %}"></script>
+
+<!-- {{ registrationForm.username }}
+      {{ registrationForm.password1 }}
+      {{ registrationForm.password2 }}
+      {{ registrationForm.email }} -->
+<!-- 
+      <div id="grassroot-fields" class="grassroot-fields user-specific-fields">
+        {{ grassroot.org_name }}
+        {{ grassroot.description }}
+        {{ grassroot.focus_area }}
+        {{ grassroot.location }}
+        {{ grassroot.sdg }}
+      </div>
+
+      <div id="donor-fields" class="donor-fields user-specific-fields">
+        {{ donor.phone }}
+        {{ donor.paymentMethod }}
+        {{ donor.firmName }}
+      </div>
+
+      <div id="community-fields" class="community-fields user-specific-fields">
+        {{ community.fullName }}
+        {{ community.age }}
+        {{ community.location }}
+      </div>  -->
+
