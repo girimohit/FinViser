@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <style>
+    </style>
+    <!-- ---------------------------- CSS BLOCK ----------------------------- -->
+    {% block css %} {% endblock %}
+</head>
+
+<body>
+    <!-- ---------------------------- BODY BLOCK ----------------------------- -->
+
+    <!-- Navbar -->
+    <div class="navbar  " id="navbar">
+        <a href="{% url 'base:homepage' %}"><img width="80rem" src="{% static 'images/finvizer.svg' %}" alt=""></a>
+        <a href="{% url 'base:homepage' %}" class="active">Home</a>
+        <!-- <a href="{% url 'base:fin_calc' %}">FinCalc</a> -->
+        <select class="dropbtn" onchange="navigateToPage(this.value)">
+            <option value="" disabled selected>FinCalc</option>
+            <option value="{% url 'base:inflation_calc' %}">Inflation Calculator</option>
+            <option value="{% url 'base:investment_calc' %}">Investment Calculator 2</option>
+        </select>
+        <a href="{% url 'base:news' %}">News</a>
+        <a href="#">DebtManager</a>
+        <a href="#">Saving Sprint</a>
+        <a href="#">Leaderboard</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
+            &#9776;
+        </a>
+        <a class="anchor-btn" href="{% url 'base:login_page' %}">Login</a>
+        <a class="anchor-btn" href="#">Get Started</a>
+    </div>
+
+    <!-- Content -->
+    {% block content %}
+    {% endblock %}
+    
+    <div class="container">
+        {% block body %}
+        
+        {% endblock %}
+    </div>
+
+    <!-- ---------------------------- SCRIPT BLOCK ----------------------------- -->
+    {% block script %} {% endblock %}
+
+    <!-- JavaScript to toggle responsive navbar -->
+    <script>
+        function toggleNavbar() {
+            var x = document.getElementById("navbar");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar";
+            }
+        }
+    </script>
+    <script>
+        function navigateToPage(url) {
+            if (url) {
+                window.location.href = url;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

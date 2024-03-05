@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}News{% endblock %}
+{% block css %}
+<style>
+    .news-article{
+        padding: 1rem 3rem;
+        border: 1px solid white;
+        margin: 2rem 5rem ;
+        border-radius: 2rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Latest News</h1>
+    <!-- <img src="{{ article.urlToImage }}" alt="Article Image"> -->
+
+
+    {% for i in articles %}
+    <div class="news-article">
+        <h3>{{ i.title }}</h3>
+        <p>{{ i.description }}</p>
+        <p>Published At : {{ i.publishedAt }}</p>
+    </div>
+    {% endfor %}
+
+
+</ul>
+{% endblock %}

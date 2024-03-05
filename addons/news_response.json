@@ -1,0 +1,253 @@
+{
+    "status": "ok",
+    "totalResults": 20,
+    "articles": [
+        {
+            "source": {
+                "id": "bloomberg",
+                "name": "Bloomberg"
+            },
+            "author": "Vildana Hajric",
+            "title": "U.S. Stocks Climb on Growth Outlook; Yields Jump: Markets Wrap",
+            "description": "U.S. stocks advanced as investors weighed a pick-up in coronavirus cases in China and an increase in Treasury yields, which climbed above 2% for the first time in nearly three years. The S&P 500 and Nasdaq 100 both rose.",
+            "url": "https://www.bloomberg.com/news/articles/2024-03-03/asia-stocks-to-drop-as-investors-eye-fed-rate-hike-markets-wrap",
+            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/icS_LesxjW_A/v2/-1x-1.jpg",
+            "publishedAt": "2024-03-03T21:35:03Z",
+            "content": "U.S. stocks advanced as investors weighed a pick-up in coronavirus cases in China and an increase in Treasury yields, which climbed above 2% for the first time in nearly three years.\r\nThe S&amp;P 50… [+5094 chars]"
+        },
+        {
+            "source": {
+                "id": "cnbc",
+                "name": "CNBC"
+            },
+            "author": "Sam Meredith",
+            "title": "Bitcoin jumps 10% after Ukraine announces plans to legalize cryptocurrency",
+            "description": "Bitcoin and other major cryptocurrencies surged on Thursday after Ukraine announced plans to legalize digital assets. Bitcoin jumped 10% to $43,483.73, according to Coin Metrics data. Ethereum rose nearly 11% to $3,018.17.",
+            "url": "https://www.cnbc.com/2024/03/03/bitcoin-price-jumps-after-ukraine-announces-plans-to-legalize-crypto.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106905982-1637654695949-gettyimages-1082197844-AFP_9J66P2.jpg?v=1646507769",
+            "publishedAt": "2024-03-03T15:30:00Z",
+            "content": "Bitcoin and other major cryptocurrencies surged on Thursday after Ukraine announced plans to legalize digital assets.\r\nThe world's most valuable digital coin rallied 10% to $43,483.73, according to… [+2355 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": "Reuters",
+            "title": "U.S. and Mexico near agreement on deal to regulate tomato trade -sources",
+            "description": "The United States and Mexico are near agreement on a deal to regulate the flow of tomatoes into the United States, sources said, resolving longstanding issues over unfair pricing and unfair trade practices.",
+            "url": "https://www.reuters.com/markets/commodities/us-mexico-near-agreement-deal-regulate-tomato-trade-sources-2024-03-02/",
+            "urlToImage": "https://www.reuters.com/resizer/nN7jYUCwCXHd0pbV2yBbGBLOhfc=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/5OH5PL2X2RJH3NC72HKMGSQCBU.jpg",
+            "publishedAt": "2024-03-02T22:55:00Z",
+            "content": "The United States and Mexico are near agreement on a deal to regulate the flow of tomatoes into the United States, sources said on Thursday, resolving longstanding issues over unfair pricing and un… [+2134 chars]"
+        },
+        {
+            "source": {
+                "id": "bloomberg",
+                "name": "Bloomberg"
+            },
+            "author": "Christopher Condon",
+            "title": "Fed's Bullard Says Russia-Ukraine Conflict Shouldn't Hold Fed Back",
+            "description": "Federal Reserve Bank of St. Louis President James Bullard said the conflict between Russia and Ukraine shouldn’t hold the Fed back from raising interest rates.",
+            "url": "https://www.bloomberg.com/news/articles/2024-03-03/fed-s-bullard-says-russia-ukraine-conflict-shouldn-t-hold-fed-back",
+            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iTbUnJVShFbE/v2/-1x-1.jpg",
+            "publishedAt": "2024-03-03T18:11:57Z",
+            "content": "Federal Reserve Bank of St. Louis President James Bullard said the conflict between Russia and Ukraine shouldn’t hold the Fed back from raising interest rates.\r\nSpeaking Thursday in an interview on… [+3448 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": "Reuters",
+            "title": "UPDATE 1-SEC chair says bond market liquidity is key issue for markets",
+            "description": "U.S. Securities and Exchange Commission Chair Gary Gensler on Thursday said bond market liquidity remains a key issue for markets, and added that he has asked staff for recommendations on rules that may be outdated.",
+            "url": "https://www.reuters.com/markets/us/sec-chair-says-bond-market-liquidity-is-key-issue-markets-2024-03-01/",
+            "urlToImage": "https://www.reuters.com/resizer/K5wWtuOTBPLw6Bllv5mM1owtH-Q=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/MLE6A6WGKBLXVJWZTYQPNRFNGI.jpg",
+            "publishedAt": "2024-03-01T21:07:00Z",
+            "content": "U.S. Securities and Exchange Commission Chair Gary Gensler on Thursday said bond market liquidity remains a key issue for markets, and added that he has asked staff for recommendations on rules th… [+1638 chars]"
+        },
+        {
+            "source": {
+                "id": "bloomberg",
+                "name": "Bloomberg"
+            },
+            "author": "Justina Lee",
+            "title": "U.S. Stocks Rise, Treasuries Fall After Powell Remarks: Markets Wrap",
+            "description": "U.S. stocks rose, Treasuries fell and the dollar weakened after Federal Reserve Chair Jerome Powell signaled policymakers are ready to raise interest rates this month.",
+            "url": "https://www.bloomberg.com/news/articles/2024-03-04/asia-stocks-to-drop-as-investors-eye-fed-rate-hike-markets-wrap",
+            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iW1_XsBumZqU/v2/-1x-1.jpg",
+            "publishedAt": "2024-03-04T10:08:27Z",
+            "content": "U.S. stocks rose, Treasuries fell and the dollar weakened after Federal Reserve Chair Jerome Powell signaled policymakers are ready to raise interest rates this month.\r\nThe S&amp;P 500 Index climb… [+4423 chars]"
+        },
+        {
+            "source": {
+                "id": "bloomberg",
+                "name": "Bloomberg"
+            },
+            "author": "Tracy Alloway",
+            "title": "It’s Time for Investors to Wake Up to the Hawkish Reality",
+            "description": "Central banks are about to stomp on the brakes with the same force they used to hit the gas. Their actions are likely to lead to a notable increase in volatility.",
+            "url": "https://www.bloomberg.com/opinion/articles/2024-03-02/central-banks-hawkish-shift-means-investors-must-wake-up-to-reality",
+            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iHE7B9vFicwU/v2/-1x-1.jpg",
+            "publishedAt": "2024-03-02T15:50:01Z",
+            "content": "Central banks are about to stomp on the brakes with the same force they used to hit the gas. Their actions are likely to lead to a notable increase in volatility.\r\nOver the past two weeks, central… [+4973 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "New York Post"
+            },
+            "author": "Keith J. Kelly",
+            "title": "Lachlan Murdoch to take over dad Rupert’s News Corp as CEO",
+            "description": "Lachlan Murdoch will take over the CEO job from his father, Rupert Murdoch, at News Corp, the publisher of The Post, and sister company Fox Corp, the parent of Fox News.",
+            "url": "https://nypost.com/2024/03/03/lachlan-murdoch-to-take-over-dad-rupert-murdochs-news-corp-as-ceo/",
+            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2020/11/lachlan-murdoch-2.jpg?quality=90&strip=all&w=1200",
+            "publishedAt": "2024-03-03T14:00:00Z",
+            "content": "Lachlan Murdoch will take over the CEO job from his father, Rupert Murdoch, at News Corp, the publisher of The Post, and sister company Fox Corp, the parent of Fox News.\r\nThe elder Murdoch will be… [+1272 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNBC"
+            },
+            "author": "Jacob Pramuk",
+            "title": "US jobless claims fall to lowest level since 1969 in sign of strong labor market",
+            "description": "Initial jobless claims for the week ended Feb. 24 fell to 215,000, the lowest level since January 1969, the Labor Department reported Thursday.",
+            "url": "https://www.cnbc.com/2024/03/02/us-weekly-jobless-claims-fall-to-215000-lowest-since-1969.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106902938-1637656887430-gettyimages-673067342-AFP_9I92EK.jpg?v=1646507852",
+            "publishedAt": "2024-03-02T13:38:40Z",
+            "content": "Initial jobless claims for the week ended Feb. 24 fell to 215,000, the lowest level since January 1969, the Labor Department reported Thursday.\r\nEconomists expected first-time filings to total 230,… [+2732 chars]"
+        },
+        {
+            "source": {
+                "id": "bloomberg",
+                "name": "Bloomberg"
+            },
+            "author": "Eric Martin, Nacha Cattan",
+            "title": "Lopez Obrador Bets Billions of Barrels Can Save Mexico's Oil Output",
+            "description": "Mexico’s president has a new, ambitious plan to boost oil production that involves producing a massive pile of crude the country can’t currently extract and calling on foreign investors to help.",
+            "url": "https://www.bloomberg.com/news/articles/2024-03-02/lopez-obrador-bets-billions-of-barrels-can-save-mexico-s-oil-output",
+            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i15AqUCpmwNk/v2/-1x-1.jpg",
+            "publishedAt": "2024-03-02T11:30:00Z",
+            "content": "Mexico’s President Andres Manuel Lopez Obrador is betting billions of barrels of crude can save the country’s declining oil output, with a plan that involves producing a massive pile of crude Mexic… [+4814 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNBC"
+            },
+            "author": "Thomas Franck",
+            "title": "Goldman Sachs calls for Fed to hike rates at every meeting until it hits 3.5%",
+            "description": "Goldman Sachs economist Joseph Briggs said in a note to clients Thursday that he expects the Federal Reserve to hike rates at each of its policy-setting meetings until it hits a terminal rate of 3.5%.",
+            "url": "https://www.cnbc.com/2024/03/02/goldman-sachs-calls-for-fed-to-hike-rates-at-every-meeting-until-it-hits-3point5percent.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106902977-1637657069768-gettyimages-1176705296-AFP_9I93IT.jpg?v=1646507852",
+            "publishedAt": "2024-03-02T11:30:00Z",
+            "content": "Goldman Sachs economist Joseph Briggs said in a note to clients Thursday that he expects the Federal Reserve to hike rates at each of its policy-setting meetings until it hits a terminal rate of 3.… [+2474 chars]"
+        },
+        {
+            "source": {
+                "id": "bloomberg",
+                "name": "Bloomberg"
+            },
+            "author": "Craig Torres, Rich Miller",
+            "title": "Powell’s Fed Looks to Rate Hikes to Squelch Inflation Pressures",
+            "description": "Federal Reserve Chair Jerome Powell, who is scheduled to speak Thursday morning, is expected to confirm that the U.S. central bank is close to a significant tightening of monetary policy.",
+            "url": "https://www.bloomberg.com/news/articles/2024-03-02/powell-s-fed-looks-to-rate-hikes-to-squelch-inflation-pressures",
+            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iElrF5C6xAbA/v2/-1x-1.jpg",
+            "publishedAt": "2024-03-01T11:35:03Z",
+            "content": "Federal Reserve Chair Jerome Powell, who is scheduled to speak Thursday morning, is expected to confirm that the U.S. central bank is close to a significant tightening of monetary policy. Powell may… [+5105 chars]"
+        },
+        {
+            "source": {
+                "id": "cnbc",
+                "name": "CNBC"
+            },
+            "author": "Amanda Macias",
+            "title": "US strikes $10 billion defense deal with Kuwait",
+            "description": "The U.S. has agreed to sell $10 billion worth of defense equipment to Kuwait, a top Pentagon official said Thursday.",
+            "url": "https://www.cnbc.com/2024/02/29/us-defense-secretary-lloyd-austin-meets-with-kuwaiti-counterpart.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106896835-1637656928887-gettyimages-1363630054-AFP_9I92YA.jpg?v=1646507852",
+            "publishedAt": "2024-02-29T23:55:00Z",
+            "content": "The U.S. has agreed to sell $10 billion worth of defense equipment to Kuwait, a top Pentagon official said Thursday.\r\nU.S. Defense Secretary Lloyd Austin met with Kuwaiti counterpart Abdullah al-Sab… [+1262 chars]"
+        },
+        {
+            "source": {
+                "id": "cnbc",
+                "name": "CNBC"
+            },
+            "author": "Fred Imbert",
+            "title": "Dow futures jump 150 points ahead of Fed Chair Jerome Powell's speech",
+            "description": "U.S. stock futures rose on Thursday ahead of Federal Reserve Chair Jerome Powell's speech.",
+            "url": "https://www.cnbc.com/2024/02/29/dow-futures-jump-ahead-of-fed-chair-jerome-powells-speech.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106892628-1637656842231-gettyimages-1229144783-AFP_9I6Z20.jpg?v=1646507852",
+            "publishedAt": "2024-02-29T11:57:00Z",
+            "content": "U.S. stock futures rose on Thursday ahead of Federal Reserve Chair Jerome Powell's speech.\r\nDow Jones Industrial Average futures added 0.5%. S&amp;P 500 futures and Nasdaq 100 futures both gained 0… [+1136 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": "Reuters",
+            "title": "Canada’s 2030 climate target to cost C$56 billion in lost GDP -government",
+            "description": "Canada’s target to cut greenhouse gas emissions 40%-45% below 2005 levels by 2030 will cost the economy an estimated C$56 billion ($44.6 billion) in lost GDP over nine years, the federal government said on Thursday.",
+            "url": "https://www.reuters.com/business/sustainable-business/canadas-2030-climate-target-cost-c56-billion-lost-gdp-government-2024-02-29/",
+            "urlToImage": "https://www.reuters.com/resizer/6egCp90uI_WWR7apJkLsW1F0vJA=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/NXTX2BLJKVIRZAPUIIZ3YH4OMU.jpg",
+            "publishedAt": "2024-02-29T21:40:00Z",
+            "content": "Canada’s target to cut greenhouse gas emissions 40%-45% below 2005 levels by 2030 will cost the economy an estimated C$56 billion ($44.6 billion) in lost GDP over nine years, the federal governmen… [+1542 chars]"
+        },
+        {
+            "source": {
+                "id": "bloomberg",
+                "name": "Bloomberg"
+            },
+            "author": "Paulo Trevisani, Jeffrey T. Lewis",
+            "title": "Brazil's Economy Slows in Fourth Quarter Amid Supply Crunch",
+            "description": "Brazil’s economy cooled in the fourth quarter as supply disruptions weighed on industrial production, pointing to a slow start for Latin America’s largest economy in 2024.",
+            "url": "https://www.bloomberg.com/news/articles/2024-03-01/brazil-s-economy-slows-in-fourth-quarter-amid-supply-crunch",
+            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iWqHSY0bsZR0/v2/-1x-1.jpg",
+            "publishedAt": "2024-03-01T20:06:47Z",
+            "content": "Brazil’s economy cooled in the fourth quarter as supply disruptions weighed on industrial production, pointing to a slow start for Latin America’s largest economy in 2024.\r\nGross domestic product ex… [+3135 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": "Reuters",
+            "title": "U.S. firms add 475,000 jobs in February, ADP says",
+            "description": "U.S. companies hired 475,000 workers in February, the most in 11 months and a sign the job market is booming despite inflation, labor shortages and the lingering pandemic.",
+            "url": "https://www.reuters.com/markets/us/us-firms-add-475000-jobs-february-adp-says-2024-03-02/",
+            "urlToImage": "https://www.reuters.com/resizer/_P9Z8JnEk4vZZwOKhOY9QJ0ws98=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/5P7BBGGOERPTTIVSN4CMC2B6MM.jpg",
+            "publishedAt": "2024-03-02T13:15:00Z",
+            "content": "U.S. companies hired 475,000 workers in February, the most in 11 months and a sign the job market is booming despite inflation, labor shortages and the lingering pandemic.\r\nPrivate payrolls rose by… [+1980 chars]"
+        },
+        {
+            "source": {
+                "id": "cnbc",
+                "name": "CNBC"
+            },
+            "author": "Thomas Franck",
+            "title": "Goldman Sachs says stay overweight on stocks as Fed prepares for 'steep hiking cycle'",
+            "description": "Goldman Sachs is advising clients to stay overweight stocks even as the Federal Reserve prepares for what could be a steep hiking cycle that takes the fed funds rate as high as 3.5% by 2024.",
+            "url": "https://www.cnbc.com/2024/02/29/goldman-sachs-says-stay-overweight-on-stocks-as-fed-prepares-for-steep-hiking-cycle.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106895191-1637657069560-gettyimages-1168638080-AFP_9I7I4S.jpg?v=1646507852",
+            "publishedAt": "2024-02-29T11:41:00Z",
+            "content": "Goldman Sachs is advising clients to stay overweight stocks even as the Federal Reserve prepares for what could be a steep hiking cycle that takes the fed funds rate as high as 3.5% by 2024.\r\nThe i… [+2919 chars]"
+        },
+        {
+            "source": {
+                "id": "bloomberg",
+                "name": "Bloomberg"
+            },
+            "author": "Jeff Kearns",
+            "title": "Fed’s Beige Book Shows ‘Elevated’ Prices, Pockets of Weakness",
+            "description": "The U.S. economy expanded at a moderate pace in the first two months of the year, with inflation elevated and pockets of softness from rising costs and supply-chain disruptions, the Federal Reserve said.",
+            "url": "https://www.bloomberg.com/news/articles/2024-03-02/fed-s-beige-book-shows-elevated-prices-pockets-of-weakness",
+            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iuFj1Wot1jFY/v2/-1x-1.jpg",
+            "publishedAt": "2024-03-02T19:03:09Z",
+            "content": "The U.S. economy expanded at a moderate pace in the first two months of the year, with inflation elevated and pockets of softness from rising costs and supply-chain disruptions, the Federal Reserve … [+5154 chars]"
+        }
+    ]
+}
