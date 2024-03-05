@@ -30,25 +30,32 @@
         </select>
         <a href="{% url 'base:news' %}">News</a>
         <a href="{% url 'base:debt_manager' %}">DebtManager</a>
-        <select class="dropbtn" onchange="navigateToPage(this.value)" name="saving sprint" id="saving-sprint" class="saving-sprint" >
+        <select class="dropbtn" onchange="navigateToPage(this.value)" name="saving sprint" id="saving-sprint"
+            class="saving-sprint">
             <option value="" disabled selected>SavingSprint</option>
             <option value="{% url 'base:amount_based' %}">Amount Based</option>
             <option value="{% url 'base:percent_based' %}">Percent Based</option>
         </select>
-        <a href="#">Leaderboard</a>
         <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
             &#9776;
         </a>
+        <a href="{% url 'base:homepage' %}" class="active">Wiser.ai</a>
+
+        {% if user.is_authenticated %}
+        <a class="anchor-btn" href="{% url 'base:logout_user' %}">{{ request.user.username }}</a>
+
+        {% else %}
         <a class="anchor-btn" href="{% url 'base:login_page' %}">Login</a>
+        {% endif %}
     </div>
 
     <!-- Content -->
     {% block content %}
     {% endblock %}
-    
+
     <div class="container">
         {% block body %}
-        
+
         {% endblock %}
     </div>
 
@@ -56,6 +63,15 @@
     {% block script %} {% endblock %}
 
     <!-- JavaScript to toggle responsive navbar -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "LaORHgYBfUwkudKSOB7Cq",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="LaORHgYBfUwkudKSOB7Cq" domain="www.chatbase.co" defer>
+    </script>
+
     <script>
         function toggleNavbar() {
             var x = document.getElementById("navbar");

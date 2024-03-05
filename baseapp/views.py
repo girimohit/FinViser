@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 import requests
 import json
 from baseapp.models import DebtManager
-# from baseapp.forms import SignUpForm
 from django.contrib.auth.models import User
+from baseapp.models import CustomUser
+from django.contrib.auth import login, logout, authenticate
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -13,11 +15,76 @@ def home(request):
 
 
 def register_user(request):
+    if request.method == "POST":
+        # Extract form data
+        username = request.POST.get("username")
+        full_name = request.POST.get("full_name")
+        age = request.POST.get("age")
+        phone_number = request.POST.get("phone_number")
+        upi_id = request.POST.get("upi_id")
+        pan = request.POST.get("pan")
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        confirm_password = request.POST.get("confirm_password")
+
+        # Check if passwords match
+        if password != confirm_password:
+            # Passwords don't match, handle this error accordingly
+            # return render(
+            #     request, "auth/signup.html", {"error": "Passwords do not match"}
+            # )
+            return HttpResponse("Password doesn't match")
+
+        # Create new CustomUser instance
+        new_user = CustomUser(
+            username=username,
+            email=email,
+            full_name=full_name,
+            age=age,
+            phone_number=phone_number,
+            upi_id=upi_id,
+            pan=pan,
+        )
+        new_user.set_password(
+            password
+        )  # Manually set the password (don't forget this step)
+        new_user.save()
+
+        # Log the user in
+        login(request, new_user)
+
+        # Redirect to some success page
+        return redirect("base:homepage")
+
     return render(request, "auth/signup.html")
 
 
 def login_user(request):
-    return render(request, "auth/signup.html")
+    if request.method == "POST":
+        # Extract username and password from the form
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        # Authenticate userF
+        user = authenticate(request, username=username, password=password)
+
+        # Check if user authentication is successful
+        if user is not None:
+            # Log the user in
+            login(request, user)
+
+            # Redirect to some success page
+            return redirect("base:homepage")
+        else:
+            # Authentication failed, handle this error accordingly
+            return render(request, "auth/login.html", {"error": "Invalid credentials"})
+
+    return render(request, "auth/login.html")
+
+
+def logout_user(request):
+    logout(request)
+    return redirect("base:homepage")
 
 
 def fincalc(request):
@@ -77,46 +144,5 @@ def delete_loan(request, id):
     return redirect("base:debt_manager")
 
 
-# def news(request):
-#     url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=adbf30f0346943d2b2cd50b2928e618e"
-#     response = "../addons/news_response.json"
-#     response = requests.get(url)
-#     context = {}
-#     if response.status_code == 200:
-#         data = response.json()
-#         context["news_data"] = data["articles"]
-#     else:
-#         context["error"] = f"Error : {response.status_code}"
-#         for i in data["articles"]:
-#             print(i)
-#             print()
-#             print()
-
-#     return render(request, "news.html", context)
-
-
-# def news(request):
-#     response = "../addons/news_response.json"
-#     data = response.json()
-#     context = {"news_data": data["articles"]}
-#     print(context)
-#     return render(request, "news.html")
-
-
-# views.py
-
-
-# def future_value_adjusted_for_inflation(present_value, inflation_rate, years):
-#     future_value = present_value * (1 + inflation_rate) ** years
-#     return future_value
-
-
-# # Example usage:
-# present_value = 10000  # Current amount of money
-# inflation_rate = 0.06  # Annual inflation rate (6% for India)
-# years = 10  # Number of years into the future
-
-# future_value = future_value_adjusted_for_inflation(present_value, inflation_rate, years)
-# print(
-#     f"The future value adjusted for inflation after {years} years would be ₹{future_value:.2f}"
-# )
+def percent_based_contest_form(request):
+    return render(request, "percent_contest_form.html")

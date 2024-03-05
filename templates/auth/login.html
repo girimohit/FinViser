@@ -74,13 +74,6 @@
         font-weight: 400;
     }
 
-    /* ------------------------------- SIGNUP FORM ------------------------------ */
-    .radio-btn {
-        display: flex;
-        flex-direction: row;
-        padding: 2vw 0.5vw;
-        background-color: transparent;
-    }
 
     #signup-form-div {
         margin: auto;
@@ -98,27 +91,21 @@
 
 {% block body %}
 <div id="signup-form-div">
-    <form method="POST" id="signup-form" class="signup-form hidden" action="{% url 'base:register_user' %}"
-        enctype="multipart/form-data">
+    <form method="post" id="login-form" action="{% url 'base:login_user' %}">
         {% csrf_token %}
         <input type="text" name="username" placeholder="Username">
-        <input type="text" name="full_name" placeholder="Full Name">
-        <input type="number" name="age" placeholder="Age">
-        <input type="number" name="phone_number" placeholder="Phone Number">
-        <input type="text" name="upi_id" placeholder="UPI ID">
-        <input type="text" name="pan" placeholder="PAN">
-        <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Password">
-        <input type="password" name="confirm_password" placeholder="Confirm Password">
-        <input type="submit" class="submit-btn" id="SignUpBtn" value="Sign Up" />
+        <input type="submit" class="submit-btn" id="SubmitBtn" value="Login" />
     </form>
+
     <br /><br />
     <span>
-        <span id="is-account">Already have an Account?</span>
-        <span><a href="{% url 'base:login_user' %}" id="SignUpLink">Login</a> </span>
+        <span id="is-account">Don't have an account?</span>
+        <span><a href="{% url 'base:register_user' %}" id="SignUpLink">Sign Up</a> </span>
     </span>
 </div>
 {% endblock %}
+
 
 
 {% block script %}

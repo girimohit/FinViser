@@ -95,12 +95,13 @@ body {
 
 
 .anchor-btn {
-    background-color: #05f4ff;
-    color: black;
+    background-color: #7f7e7e;
+    color: rgb(0, 0, 0);
     border: none;
-    border-radius: 15px;
-    padding: 0;
+    border-radius: 10px;
+    padding: 0.4rem 1rem;
     margin: 0;
+    
 }
 
 
