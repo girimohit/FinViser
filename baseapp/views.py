@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import requests
 import json
+from baseapp.models import DebtManager
 
 # Create your views here.
 
@@ -23,6 +24,47 @@ def investment_calc(request):
 
 def inflation_calc(request):
     return render(request, "inflation_calc.html")
+
+
+def news(request):
+    with open(
+        "C:/Users/mohit/Desktop/I/Projects/FinViser/addons/news_response.json", "r"
+    ) as file:
+        data = json.load(file)
+    articles = data.get("articles", [])
+    return render(request, "news.html", {"articles": articles})
+
+
+def percent_based(request):
+    return render(request, "percent_based.html")
+
+
+def coin_jar(request):
+    print("Coin jar started")
+    pass
+
+
+def debt_manager(request):
+    loans = DebtManager.objects.all()
+    return render(request, "debtmanager.html", {"loans": loans})
+
+
+def add_loan(request):
+    if request.method == "POST":
+        loan_type = request.POST.get("loan_type")
+        loan_amount = request.POST.get("loan_amount")
+        due_date = request.POST.get("due_date")
+        DebtManager.objects.create(
+            loan_type=loan_type, loan_amount=loan_amount, due_date=due_date
+        )
+        return redirect("base:debt_manager")
+    pass
+
+
+def delete_loan(request, id):
+    loan = DebtManager.objects.get(pk=id)
+    loan.delete()
+    return redirect("base:debt_manager")
 
 
 # def news(request):
@@ -52,19 +94,6 @@ def inflation_calc(request):
 
 
 # views.py
-
-
-def news(request):
-    # Load JSON data from file
-    # with open("../addons/news_response.json", "r") as file:
-    with open("C:/Users/mohit/Desktop/I/Projects/FinViser/addons/news_response.json", "r") as file:
-        data = json.load(file)
-
-    # Extract articles
-    articles = data.get("articles", [])
-
-    # Render HTML template with articles as context
-    return render(request, "news.html", {"articles": articles})
 
 
 # def future_value_adjusted_for_inflation(present_value, inflation_rate, years):

@@ -10,4 +10,9 @@ urlpatterns = [
     path("investment-calculator", views.investment_calc, name="investment_calc"),
     path("inflation-calculator", views.inflation_calc, name="inflation_calc"),
     path("news", views.news, name="news"),
+    path("percentage-based", views.percent_based, name="percent_based"),
+    path("coin-jar-contest", views.coin_jar, name="coin_jar"),
+    path("debt-manager", views.debt_manager, name="debt_manager"),
+    path("debt-manager/add-loan", views.add_loan, name="add_loan"),
+    path("debt-manager/delete-loan/<int:id>", views.delete_loan, name="delete_loan"),
 ]

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .filters {
+        margin-bottom: 20px;
+    }
+
+    .chart-container {
+        margin-bottom: 20px;
+    }
+
+    .debt-list {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .debt-item {
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+    }
+
+    .debt-item:last-child {
+        border-bottom: none;
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+    <h1>Debt Management Dashboard</h1>
+    <div class="filters">
+        <label for="sort">Sort by:</label>
+        <select id="sort">
+            <option value="amount">Amount</option>
+            <option value="dueDate">Due Date</option>
+            <!-- Add more options as needed -->
+        </select>
+        <input type="text" id="search" placeholder="Search...">
+    </div>
+    <div id="chartContainer" style="width: 65%; height: 65%; margin-left: 20%;" class="chart-container">
+        <!-- Chart will be displayed here -->
+        <canvas id="chart"></canvas>
+    </div>
+    <h2>Your Pending Debts</h2>
+    <div id="debtList" class="debt-list">
+        <!-- Debt list will be displayed here -->
+    </div>
+</div>
+
+<h1>LOANS</h1>
+<ul>
+    {% for i in loans %}
+    <li>
+        {{ i.loan_type }}
+        {{ i.loan_amount }}
+        {{ i.due_date }}
+        <a href="{% url 'base:delete_loan' i.id %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+
+<form action="{% url 'base:add_loan' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="loan_type" placeholder="Loan Type">
+    <input type="text" name="loan_amount" placeholder="Loan Amount">
+    <input type="date" name="due_date" placeholder="Due Date">
+    <input type="submit" value="Add Loan">
+</form>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<script src="{% static 'js/debtmanager.js' %}"></script>
+{% endblock %}
