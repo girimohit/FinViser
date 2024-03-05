@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form id="incomeForm" action="">
+    <input type="text" placeholder="UPI ID">
+    <input type="text" id="monthlyIncome" placeholder="Monthly Income">
+    <input type="text" id="desiredSaving" placeholder="Desired Saving">
+</form>
+<div id="expected-expenditure"></div>
+{% endblock %}
+
+{% block script %}
+<script>
+    // Get input elements
+    const monthlyIncomeInput = document.getElementById('monthlyIncome');
+    const desiredSavingInput = document.getElementById('desiredSaving');
+    const expectedExpenditureOutput = document.getElementById('expected-expenditure');
+
+    // Add event listener to the form
+    document.getElementById('incomeForm').addEventListener('input', function () {
+        // Parse input values to floats
+        const monthlyIncome = parseFloat(monthlyIncomeInput.value);
+        const desiredSaving = parseFloat(desiredSavingInput.value);
+
+        // Calculate expected expenditure
+        const expectedExpenditure = monthlyIncome - desiredSaving; 
+
+        // Update output
+        expectedExpenditureOutput.textContent = `Expected Expenditure: ${expectedExpenditure.toFixed(2)}`;
+    });
+</script>
+{% endblock %}

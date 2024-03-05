@@ -120,7 +120,7 @@ body {
     font-size: 17px;
     border: none;
     cursor: pointer;
-    width: 8%;
+    width: 9%;
 }
 
 /* Dropdown content (hidden by default) */
@@ -149,4 +149,8 @@ body {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+#saving-sprint{
+    width: 11%;
 }

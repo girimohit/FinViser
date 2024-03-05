@@ -25,18 +25,21 @@
         <!-- <a href="{% url 'base:fin_calc' %}">FinCalc</a> -->
         <select class="dropbtn" onchange="navigateToPage(this.value)">
             <option value="" disabled selected>FinCalc</option>
-            <option value="{% url 'base:inflation_calc' %}">Inflation Calculator</option>
-            <option value="{% url 'base:investment_calc' %}">Investment Calculator 2</option>
+            <option value="{% url 'base:inflation_calc' %}">Inflation Calc</option>
+            <option value="{% url 'base:investment_calc' %}">ROI Calc</option>
         </select>
         <a href="{% url 'base:news' %}">News</a>
         <a href="#">DebtManager</a>
-        <a href="#">Saving Sprint</a>
+        <select class="dropbtn" name="saving sprint" id="saving-sprint" class="saving-sprint">
+            <option value="" disabled selected>SavingSprint</option>
+            <option value="">Payment Based</option>
+            <option value="">Percentage Based</option>
+        </select>
         <a href="#">Leaderboard</a>
         <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
             &#9776;
         </a>
         <a class="anchor-btn" href="{% url 'base:login_page' %}">Login</a>
-        <a class="anchor-btn" href="#">Get Started</a>
     </div>
 
     <!-- Content -->
