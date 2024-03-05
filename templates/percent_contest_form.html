@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 
+{% block css %}
+<style>
+    #contest-form-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+{% endblock %}
 {% block body %}
-<form id="incomeForm" action="">
-    <input type="text" placeholder="UPI ID">
-    <input type="text" id="monthlyIncome" placeholder="Monthly Income">
-    <input type="text" id="desiredSaving" placeholder="Desired Saving">
-</form>
-<div id="expected-expenditure"></div>
+<div id="contest-form-div">
+    <form id="incomeForm" action="{% url 'base:percent_based_contest_form' %}" method="POST">
+        {% csrf_token %}
+        <!-- <input type="text" placeholder="UPI ID"> -->
+        <input type="number" name="monthly_income" id="monthlyIncome" placeholder="Monthly Income">
+        <br><br>
+        <input type="number" name="desired_saving" id="desiredSaving" placeholder="Desired Saving">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="expected-expenditure"></div>
+</div>
+
+
 {% endblock %}
 
 {% block script %}
@@ -23,7 +40,7 @@
         const desiredSaving = parseFloat(desiredSavingInput.value);
 
         // Calculate expected expenditure
-        const expectedExpenditure = monthlyIncome - desiredSaving; 
+        const expectedExpenditure = monthlyIncome - desiredSaving;
 
         // Update output
         expectedExpenditureOutput.textContent = `Expected Expenditure: ${expectedExpenditure.toFixed(2)}`;

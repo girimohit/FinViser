@@ -17,3 +17,12 @@ class CustomUser(AbstractUser):
     phone_number = models.IntegerField()
     upi_id = models.CharField(max_length=50)
     pan = models.CharField(max_length=12)
+
+
+class Contest(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    monthly_income = models.IntegerField()
+    desired_saving = models.IntegerField()
+    payment_count = models.IntegerField(default=0)
+    saving = models.IntegerField(default = 0)
+    last_updated = models.DateTimeField(auto_now=True)

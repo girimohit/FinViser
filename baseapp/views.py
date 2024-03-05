@@ -3,9 +3,10 @@ import requests
 import json
 from baseapp.models import DebtManager
 from django.contrib.auth.models import User
-from baseapp.models import CustomUser
+from baseapp.models import CustomUser, Contest
 from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -144,5 +145,24 @@ def delete_loan(request, id):
     return redirect("base:debt_manager")
 
 
+@login_required
+def contest_dashboard(request):
+    return HttpResponse("Dashboard Here!!!")
+
+
+@login_required
 def percent_based_contest_form(request):
+    if request.method == "POST":
+        # upi_id = request.user.upi_id
+        monthly_income = request.POST.get("monthly_income")
+        desired_saving = request.POST.get("desired_saving")
+        print(monthly_income)
+        print(desired_saving)
+        obj = Contest(
+            user=request.user,
+            monthly_income=monthly_income,
+            desired_saving=desired_saving,
+        )
+        obj.save()
+        return redirect("base:contest_dashboard")
     return render(request, "percent_contest_form.html")

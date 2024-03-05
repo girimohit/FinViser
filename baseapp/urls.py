@@ -19,5 +19,6 @@ urlpatterns = [
     path("login-user", views.login_user, name="login_user"),
     path("register-user", views.register_user, name="register_user"),
     path("contest-percent-based", views.percent_based_contest_form, name="percent_based_contest_form"),
-    path("logout-user", views.logout_user, name="logout_user")
+    path("logout-user", views.logout_user, name="logout_user"),
+    path("contest-dashboard", views.contest_dashboard, name="contest_dashboard")
 ]
