@@ -42,7 +42,7 @@
         <div class="card">
             <div class="card-content">
                 <div class="number">1217</div>
-                <div class="card-name">Contestants</div>
+                <div class="card-name" style="color: white;">Contestants</div>
             </div>
             <div class="icon-box">
                 <i class="fas fa-users"></i>
@@ -51,7 +51,7 @@
         <div class="card">
             <div class="card-content">
                 <div class="number">42</div>
-                <div class="card-name">Payments</div>
+                <div class="card-name" style="color: white;">Payments</div>
             </div>
             <div class="icon-box">
                 <i class="fas fa-dollar-sign"></i>
@@ -60,7 +60,7 @@
         <div class="card">
             <div class="card-content">
                 <div class="number">$4500</div>
-                <div class="card-name">Savings</div>
+                <div class="card-name" style="color: white;">Savings</div>
             </div>
             <div class="icon-box">
 
@@ -69,16 +69,16 @@
         <div class="card">
             <div class="card-content">
                 <div class="number"><input type="number" placeholder="Enter Payment Amt." style="width: 70%;"></div>
-                <div class="card-name">UPI Payment</div>
+                <div class="card-name" style="color: white;">UPI Payment</div>
             </div>
             <div class="pay-btn">
-                <button style="cursor: pointer; ">Pay Now</button>
+                <button style="cursor: pointer;">Pay Now</button>
             </div>
         </div>
     </div>
     <div class="charts">
         <div class="chart">
-            <h2>Savings (since you started this contest)</h2>
+            <h2 id="head1">Savings (since you started this contest)</h2>
             <div>
                 <canvas id="lineChart"></canvas>
             </div>
@@ -89,7 +89,7 @@
             <label for="endDate">Enter end date:</label>
             <input type="date" id="endDate">
             <button onclick="startCountdown()">Start Countdown</button>
-            <h2>Time Remaining:</h2>
+            <h2 id="head2">Time Remaining:</h2>
             <div>
                 <canvas id="countdownTimer"></canvas>
             </div>
