@@ -147,7 +147,8 @@ def delete_loan(request, id):
 
 @login_required
 def contest_dashboard(request):
-    return HttpResponse("Dashboard Here!!!")
+    # return HttpResponse("Dashboard Here!!!")
+    return render(request, "contest_dashboard.html")
 
 
 @login_required
