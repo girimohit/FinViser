@@ -39,6 +39,9 @@ def percent_based(request):
     return render(request, "percent_based.html")
 
 
+def amount_based(request):
+    return render(request, "amount_based.html")
+
 def coin_jar(request):
     print("Coin jar started")
     pass

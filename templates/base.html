@@ -32,7 +32,7 @@
         <a href="{% url 'base:debt_manager' %}">DebtManager</a>
         <select class="dropbtn" onchange="navigateToPage(this.value)" name="saving sprint" id="saving-sprint" class="saving-sprint" >
             <option value="" disabled selected>SavingSprint</option>
-            <option value="">Amount Based</option>
+            <option value="{% url 'base:amount_based' %}">Amount Based</option>
             <option value="{% url 'base:percent_based' %}">Percent Based</option>
         </select>
         <a href="#">Leaderboard</a>
