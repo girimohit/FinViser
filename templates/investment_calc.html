@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/calc.css' %}">
+{% endblock %}
+
+
+{% block body %}
+<div class="calculator">
+    <h2>Investment Calculator</h2>
+    <form id="investmentForm">
+        <input type="number" id="principal" name="principal" placeholder="Initial Amount" required>
+        <input type="number" id="annualInterestRate" name="annualInterestRate" placeholder="Annual Interest Rate(%)"
+            required>
+        <input type="number" id="compoundingPeriods" name="compoundingPeriods" placeholder="Compounding Period(yrs)"
+            required>
+        <input type="number" id="years" name="years" placeholder="Investment Durations(yrs)" required>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <div id="result" style="display: none;">
+        <h3>Investment Returns</h3>
+        <p id="futureValue"></p>
+        <p id="totalInterest"></p>
+    </div>
+</div>
+{% endblock %}
+
+
+
+{% block script %}
+<script>
+    function calculate() {
+        var principal = parseFloat(document.getElementById('principal').value);
+        var annualInterestRate = parseFloat(document.getElementById('annualInterestRate').value);
+        var compoundingPeriods = parseFloat(document.getElementById('compoundingPeriods').value);
+        var years = parseFloat(document.getElementById('years').value);
+
+        // Call the backend to calculate investment returns
+        // For now, we'll just use the logic on the client-side
+        var futureValue = principal * Math.pow(1 + annualInterestRate / (100 * compoundingPeriods), compoundingPeriods * years);
+        var totalInterest = futureValue - principal;
+
+        // Display the result
+        document.getElementById('futureValue').innerHTML = 'Future Value: ₹' + futureValue.toFixed(2);
+        document.getElementById('totalInterest').innerHTML = 'Total Interest Earned: ₹' + totalInterest.toFixed(2);
+
+        // Show the result section
+        document.getElementById('result').style.display = 'block';
+    }
+</script>
+{% endblock %}

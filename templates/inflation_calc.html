@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+
+{% block css %}
+
+<style>
+    .calculator {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #result {
+        display: none;
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+<div class="calculator">
+    <h2>Future Value Adjusted for Inflation Calculator</h2>
+    <form id="inflationForm">
+        <input type="number" id="presentValue" name="presentValue" placeholder="Present Value" required>
+        <input type="number" id="inflationRate" name="inflationRate" placeholder="Annual Inflation Rate" required>
+        <input type="number" id="years" name="years" placeholder="Number of Years" required>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <div id="result">
+        <h3>Future Value Adjusted for Inflation</h3>
+        <p id="futureValue"></p>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block script %}
+<script>
+    function calculate() {
+        var presentValue = parseFloat(document.getElementById('presentValue').value);
+        var inflationRate = parseFloat(document.getElementById('inflationRate').value);
+        var years = parseFloat(document.getElementById('years').value);
+
+        // Convert inflation rate to a decimal
+        var inflationRateDecimal = inflationRate / 100;
+
+        // Calculate future value adjusted for inflation
+        var futureValueAdjustedForInflation = presentValue * Math.pow(1 + inflationRateDecimal, years);
+
+        // Display the result
+        document.getElementById('futureValue').innerHTML = 'Future Value Adjusted for Inflation: ₹' + futureValueAdjustedForInflation.toFixed(2);
+
+        // Show the result section
+        document.getElementById('result').style.display = 'block';
+    }
+</script>
+{% endblock %}
