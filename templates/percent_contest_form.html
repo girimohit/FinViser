@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block css %}
+<style>
+    #contest-form-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div id="contest-form-div">
+    <form id="incomeForm" action="{% url 'base:percent_based_contest_form' %}" method="POST">
+        {% csrf_token %}
+        <!-- <input type="text" placeholder="UPI ID"> -->
+        <input type="number" name="monthly_income" id="monthlyIncome" placeholder="Monthly Income">
+        <br><br>
+        <input type="number" name="desired_saving" id="desiredSaving" placeholder="Desired Saving">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <a href="{% url 'base:contest_dashboard' %}">DASHBOARD</a>
+
+
+    <div id="expected-expenditure"></div>
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+<script>
+    // Get input elements
+    const monthlyIncomeInput = document.getElementById('monthlyIncome');
+    const desiredSavingInput = document.getElementById('desiredSaving');
+    const expectedExpenditureOutput = document.getElementById('expected-expenditure');
+
+    // Add event listener to the form
+    document.getElementById('incomeForm').addEventListener('input', function () {
+        // Parse input values to floats
+        const monthlyIncome = parseFloat(monthlyIncomeInput.value);
+        const desiredSaving = parseFloat(desiredSavingInput.value);
+
+        // Calculate expected expenditure
+        const expectedExpenditure = monthlyIncome - desiredSaving;
+
+        // Update output
+        expectedExpenditureOutput.textContent = `Expected Expenditure: ${expectedExpenditure.toFixed(2)}`;
+    });
+</script>
+{% endblock %}

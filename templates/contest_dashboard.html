@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contest_dashboard.css' %}">
+{% endblock %}
+
+
+
+{% block body %}
+<div class="sidebar">
+    <ul>
+        <li>
+            <a href="#">
+                <i class="fas fa-th-large"></i>
+                <div>My Contests</div>
+            </a>
+        </li>
+        <!-- <li>
+            <a href="#">
+                <i class="fas fa-user-graduate"></i>
+                <div>Students</div>
+            </a>
+        </li> -->
+        <li>
+            <a href="#">
+                <i class="fas fa-chart-bar"></i>
+                <div>Leaderboard</div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-question"></i>
+                <div>Help</div>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="main">
+    <div class="cards">
+        <div class="card">
+            <div class="card-content">
+                <div class="number">{{ contestant_count }}</div>
+                <div class="card-name" style="color: whitesmoke;">Contestants</div>
+            </div>
+            <div class="icon-box">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <!-- <<<<<<< HEAD -->
+                <div class="number">{{ data.payment_count }}</div>
+                <div class="card-name" style="color: whitesmoke;">Payments</div>
+                <!-- ======= -->
+                <!-- <div class="number">42</div>
+                <div class="card-name" style="color: white;">Payments</div> -->
+            </div>
+            <div class="icon-box">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="number">₹ {{ data.saving }}</div>
+                <div class="card-name" style="color: whitesmoke;">Savings</div>
+                <!-- <div class="number">$4500</div> -->
+                <!-- <div class="card-name" style="color: white;">Savings</div> -->
+            </div>
+            <div class="icon-box">
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <form action="{% url 'base:contest_dashboard' %}" method="POST" id="update_upi">
+                    <!-- केतन भड़वा है  -->
+                    {% csrf_token %}
+                    <input type="number" name="upi_pay" placeholder="Payment Amt.">
+                    <input type="submit" style="cursor: pointer;" value="Pay">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- <<<<<<< HEAD
+    <div class="charts" >
+        <div class="chart" style="background-color: black;">
+            <h2 style="color: whitesmoke">Savings (since you started this contest)</h2>
+======= -->
+    <div class="charts">
+        <div class="chart">
+            <h2 id="head1">Savings (since you started this contest)</h2>
+            <div>
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+        <div class="chart doughnut-chart" style="background-color: black;">
+            <label for="startDate">Enter start date:</label>
+            <input type="date" id="startDate">
+            <label for="endDate">Enter end date:</label>
+            <input type="date" id="endDate">
+            <button onclick="startCountdown()">Start Countdown</button>
+            <h2 id="head2">Time Remaining:</h2>
+            <div>
+                <canvas id="countdownTimer"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+{% endblock %}
+
+
+{% block script %}
+<script src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}
