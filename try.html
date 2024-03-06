@@ -1,67 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Cards</title>
-    <style>
-        /* Style for the container of cards */
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Recommendation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
 
-        /* Style for individual cards */
-        .card {
-            width: 300px;
-            /* Adjust width as needed */
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-        }
+    h2 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
 
-        /* Media query for responsiveness */
-        @media screen and (max-width: 768px) {
-            .card {
-                width: calc(50% - 20px);
-                /* Adjust width for smaller screens */
-            }
-        }
+    form {
+      display: inline-block;
+      text-align: left;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
 
-        @media screen and (max-width: 576px) {
-            .card {
-                width: calc(100% - 20px);
-                /* Adjust width for even smaller screens */
-            }
-        }
-    </style>
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 150px;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #result p {
+      margin: 0;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="card-container">
-        <!-- Card 1 -->
-        <div class="card">
-            <h2>Card 1</h2>
-            <p>This is the content of Card 1.</p>
-        </div>
 
-        <!-- Card 2 -->
-        <div class="card">
-            <h2>Card 2</h2>
-            <p>This is the content of Card 2.</p>
-        </div>
+  <h2>Investment Suggestor </h2>
+  <p>Enter your age and capital to get personalized investment suggestions.</p>
 
-        <!-- Card 3 -->
-        <div class="card">
-            <h2>Card 3</h2>
-            <p>This is the content of Card 3.</p>
-        </div>
-    </div>
+  <label for="age">Age:</label>
+  <input type="number" id="age" placeholder="Enter your age">
+
+  <label for="capital">Capital (&#8377;):</label>
+  <input type="number" id="capital" placeholder="Enter your capital">
+
+  <button onclick="calculateInvestment()">Get Recommendation</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateInvestment() {
+      const age = document.getElementById("age").value;
+      const capital = document.getElementById("capital").value;
+
+      if (age >= 18 && age <= 30) {
+        const stocks = capital * 0.8;
+        const bonds = capital * 0.1;
+        const fd = capital * 0.1;
+        displayResult(stocks, bonds, fd);
+      } else if (age >= 31 && age <= 50) {
+        const stocks = capital * 0.7;
+        const bonds = capital * 0.2;
+        const fd = capital * 0.1;
+        displayResult(stocks, bonds, fd);
+      } else if (age >= 51 && age < 70) {
+        const stocks = capital * 0.55;
+        const bonds = capital * 0.3;
+        const fd = capital * 0.15;
+        displayResult(stocks, bonds, fd);
+      } else if (age >= 70) {
+        const stocks = capital * 0.3;
+        const bonds = capital * 0.5;
+        const fd = capital * 0.2;
+        displayResult(stocks, bonds, fd);
+      } else {
+        displayResult("Invalid input. Please enter a valid age.");
+      }
+    }
+
+    function displayResult(stocks, bonds, fd) {
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = `<p><strong>Investment Recommendation:</strong></p>
+                            <p>Invest ${stocks.toFixed(2)} in Riskier Investments (Stocks)</p>
+                            <p>Invest ${bonds.toFixed(2)} in Safer Investments (Bonds)</p>
+                            <p>Invest ${fd.toFixed(2)} in Fixed Deposits (FD)</p>`;
+    }
+  </script>
+
 </body>
-
 </html>

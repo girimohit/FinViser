@@ -41,8 +41,8 @@
     <div class="cards">
         <div class="card">
             <div class="card-content">
-                <div class="number">1217</div>
-                <div class="card-name">Contestants</div>
+                <div class="number">{{ contestant_count }}</div>
+                <div class="card-name" style="color: whitesmoke;">Contestants</div>
             </div>
             <div class="icon-box">
                 <i class="fas fa-users"></i>
@@ -50,8 +50,8 @@
         </div>
         <div class="card">
             <div class="card-content">
-                <div class="number">42</div>
-                <div class="card-name">Payments</div>
+                <div class="number">{{ data.payment_count }}</div>
+                <div class="card-name" style="color: whitesmoke;">Payments</div>
             </div>
             <div class="icon-box">
                 <i class="fas fa-dollar-sign"></i>
@@ -59,8 +59,8 @@
         </div>
         <div class="card">
             <div class="card-content">
-                <div class="number">$4500</div>
-                <div class="card-name">Savings</div>
+                <div class="number">₹ {{ data.saving }}</div>
+                <div class="card-name" style="color: whitesmoke;">Savings</div>
             </div>
             <div class="icon-box">
 
@@ -69,27 +69,27 @@
         <div class="card">
             <div class="card-content">
                 <div class="number"><input type="number" placeholder="Enter Payment Amt." style="width: 70%;"></div>
-                <div class="card-name">UPI Payment</div>
+                <div class="card-name" style="color: whitesmoke;">UPI Payment</div>
             </div>
             <div class="pay-btn">
                 <button style="cursor: pointer; ">Pay Now</button>
             </div>
         </div>
     </div>
-    <div class="charts">
-        <div class="chart">
-            <h2>Savings (since you started this contest)</h2>
+    <div class="charts" >
+        <div class="chart" style="background-color: black;">
+            <h2 style="color: whitesmoke">Savings (since you started this contest)</h2>
             <div>
                 <canvas id="lineChart"></canvas>
             </div>
         </div>
-        <div class="chart doughnut-chart">
+        <div class="chart doughnut-chart" style="background-color: black;">
             <label for="startDate">Enter start date:</label>
             <input type="date" id="startDate">
             <label for="endDate">Enter end date:</label>
             <input type="date" id="endDate">
             <button onclick="startCountdown()">Start Countdown</button>
-            <h2>Time Remaining:</h2>
+            <h2 style="color: whitesmoke;">Time Remaining:</h2>
             <div>
                 <canvas id="countdownTimer"></canvas>
             </div>

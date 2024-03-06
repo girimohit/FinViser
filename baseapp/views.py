@@ -7,6 +7,8 @@ from baseapp.models import CustomUser, Contest
 from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from datetime import datetime, timedelta
+from django.utils import timezone
 
 # Create your views here.
 
@@ -126,6 +128,8 @@ def debt_manager(request):
     loans = DebtManager.objects.all()
     return render(request, "debtmanager.html", {"loans": loans})
 
+def investment_suggestor(request):
+    return render(request, "investment_sugg.html")
 
 def add_loan(request):
     if request.method == "POST":
@@ -147,23 +151,58 @@ def delete_loan(request, id):
 
 @login_required
 def contest_dashboard(request):
-    # return HttpResponse("Dashboard Here!!!")
-    return render(request, "contest_dashboard.html")
+    print(request.user.id)
+    data = Contest.objects.get(user_id=request.user.id)
+    # contestant_count = Contest.objects.filter(user_id = request.user.id).count()
+    contestant_count = Contest.objects.count()
+
+    context = {"data": data, "contestant_count": contestant_count}
+    return render(request, "contest_dashboard.html", context)
+
+
+# @login_required
+# def percent_based_contest_form(request):
+#     if request.method == "POST":
+#         # upi_id = request.user.upi_id
+#         monthly_income = request.POST.get("monthly_income")
+#         desired_saving = request.POST.get("desired_saving")
+#         print(monthly_income)
+#         print(desired_saving)
+#         obj = Contest(
+#             user=request.user,
+#             monthly_income=monthly_income,
+#             desired_saving=desired_saving,
+#         )
+#         obj.save()
+#         return redirect("base:contest_dashboard")
+#     return render(request, "percent_contest_form.html")
 
 
 @login_required
 def percent_based_contest_form(request):
+    # Check if the user has already submitted the form within the last 30 days
+    last_submission = (
+        Contest.objects.filter(user=request.user).order_by("-last_updated").first()
+    )
+    if last_submission and (timezone.now() - last_submission.last_updated).days < 30:
+        return redirect("base:contest_dashboard")
+
     if request.method == "POST":
-        # upi_id = request.user.upi_id
         monthly_income = request.POST.get("monthly_income")
         desired_saving = request.POST.get("desired_saving")
-        print(monthly_income)
-        print(desired_saving)
+
         obj = Contest(
             user=request.user,
             monthly_income=monthly_income,
             desired_saving=desired_saving,
+            last_updated=timezone.now(),
         )
         obj.save()
         return redirect("base:contest_dashboard")
+
     return render(request, "percent_contest_form.html")
+
+
+
+def vizerai(request):
+    return render(request, "vizerai.html")

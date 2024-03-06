@@ -1168,10 +1168,24 @@
 
 
                     <!-- BUTTON -->
-                    <a href="#"
+                    <!-- <a href="#"
                         class="text-xl bg-light dark:bg-dark dark:text-white text-white font-semibold rounded-lg px-5 py-3 text-center border border-light dark:border-dark mt-auto hover:bg-light dark:hover:bg-dark hover:text-white transition-all duration-500">
                         Get started
+                    </a> -->
+
+
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'base:percent_based_contest_form' %}"
+                        class="text-xl dark:text-white text-light font-semibold rounded-lg px-5 py-3 text-center border-2 border-light dark:border-dark mt-auto hover:bg-light dark:hover:bg-dark hover:text-white transition-all duration-500">
+                        Get started
                     </a>
+
+                    {% else %}
+                    <a href="{% url 'base:login_user' %}"
+                        class="text-xl dark:text-white text-light font-semibold rounded-lg px-5 py-3 text-center border-2 border-light dark:border-dark mt-auto hover:bg-light dark:hover:bg-dark hover:text-white transition-all duration-500">
+                        Get started
+                    </a>
+                    {% endif %}
                 </div>
             </li>
             <!-- PRICING TABLE END -->

@@ -63,24 +63,16 @@
         <canvas id="chart"></canvas>
     </div>
     <h2>Your Pending Debts</h2>
-    <div id="debtList" class="debt-list">
-        <!-- Debt list will be displayed here -->
-    </div>
-</div>
-
-<h1>LOANS</h1>
-<ul>
     {% for i in loans %}
-    <li>
-        {{ i.loan_type }}
-        {{ i.loan_amount }}
-        {{ i.due_date }}
+    <div id="debtLifst" class="debt-list">
+        <!-- Debt list will be displayed here -->
+        <h2>{{ i.loan_type }}</h2>
+        <p>Amount : {{ i.loan_amount }}</p>
+        <p>Due Date : {{ i.due_date }}</p>
         <a href="{% url 'base:delete_loan' i.id %}">Delete</a>
-    </li>
+    </div>
     {% endfor %}
-</ul>
-
-
+</div>
 <form action="{% url 'base:add_loan' %}" method="post">
     {% csrf_token %}
     <input type="text" name="loan_type" placeholder="Loan Type">

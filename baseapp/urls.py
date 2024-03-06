@@ -20,5 +20,7 @@ urlpatterns = [
     path("register-user", views.register_user, name="register_user"),
     path("contest-percent-based", views.percent_based_contest_form, name="percent_based_contest_form"),
     path("logout-user", views.logout_user, name="logout_user"),
-    path("contest-dashboard", views.contest_dashboard, name="contest_dashboard")
+    path("contest-dashboard", views.contest_dashboard, name="contest_dashboard"),
+    path("investment_suggestor", views.investment_suggestor, name="investment_suggestor"),
+    path("vizerai", views.vizerai, name="vizerai")
 ]
