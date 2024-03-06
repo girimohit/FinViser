@@ -9,6 +9,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
 from django.utils import timezone
+from math import ceil
 
 # Create your views here.
 
@@ -128,8 +129,10 @@ def debt_manager(request):
     loans = DebtManager.objects.all()
     return render(request, "debtmanager.html", {"loans": loans})
 
+
 def investment_suggestor(request):
     return render(request, "investment_sugg.html")
+
 
 def add_loan(request):
     if request.method == "POST":
@@ -149,15 +152,65 @@ def delete_loan(request, id):
     return redirect("base:debt_manager")
 
 
+# @login_required
+# def contest_dashboard(request):
+#     if request.method == "POST":
+#         upi_pay = request.POST.get("upi_pay")
+#         print("UPI PAY : ", upi_pay)
+#         upi_pay = int(upi_pay)
+#         difference = ceil(upi_pay / 10) * 10 - upi_pay
+#         obj = Contest.objects.get_or_create(user=request.user)
+#         obj.saving += difference
+#         obj.payment_count += 1
+#         obj.save()
+#         return redirect("base:contest_dashboard")
+
+#     else:
+#         print(request.user.id)
+#         data = Contest.objects.get(user_id=request.user.id)
+#         # contestant_count = Contest.objects.filter(user_id = request.user.id).count()
+#         contestant_count = Contest.objects.count()
+
+#         context = {"data": data, "contestant_count": contestant_count}
+#         return render(request, "contest_dashboard.html", context)
+
+
+from math import ceil
+
+
 @login_required
 def contest_dashboard(request):
-    print(request.user.id)
-    data = Contest.objects.get(user_id=request.user.id)
-    # contestant_count = Contest.objects.filter(user_id = request.user.id).count()
-    contestant_count = Contest.objects.count()
+    if request.method == "POST":
+        upi_pay = request.POST.get("upi_pay")
+        print("UPI PAY : ", upi_pay)
+        upi_pay = int(upi_pay)
+        difference = ceil(upi_pay / 5) * 5 - upi_pay
 
-    context = {"data": data, "contestant_count": contestant_count}
-    return render(request, "contest_dashboard.html", context)
+        # Unpack the tuple returned by get_or_create()
+        obj, created = Contest.objects.get_or_create(user=request.user)
+
+        # Check if the object was created
+        if created:
+            # If created, set default values for saving and payment_count
+            obj.saving = difference
+            obj.payment_count = 1
+        else:
+            # If not created, update the existing values
+            obj.saving += difference
+            obj.payment_count += 1
+
+        # Save the changes
+        obj.save()
+        return redirect("base:contest_dashboard")
+
+    else:
+        print(request.user.id)
+        data = Contest.objects.get(user_id=request.user.id)
+        # contestant_count = Contest.objects.filter(user_id = request.user.id).count()
+        contestant_count = Contest.objects.count()
+
+        context = {"data": data, "contestant_count": contestant_count}
+        return render(request, "contest_dashboard.html", context)
 
 
 # @login_required
@@ -201,7 +254,6 @@ def percent_based_contest_form(request):
         return redirect("base:contest_dashboard")
 
     return render(request, "percent_contest_form.html")
-
 
 
 def vizerai(request):

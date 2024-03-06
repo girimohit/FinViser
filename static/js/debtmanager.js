@@ -1,3 +1,5 @@
+
+
 // Sample debt data
 const debts = [
     { name: 'Credit Card', amount: 5000, dueDate: '2026-06-30' },

@@ -26,3 +26,4 @@ class Contest(models.Model):
     payment_count = models.IntegerField(default=0)
     saving = models.IntegerField(default = 0)
     last_updated = models.DateTimeField(auto_now=True)
+        

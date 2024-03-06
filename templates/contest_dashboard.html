@@ -17,12 +17,12 @@
                 <div>My Contests</div>
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="#">
                 <i class="fas fa-user-graduate"></i>
                 <div>Students</div>
             </a>
-        </li>
+        </li> -->
         <li>
             <a href="#">
                 <i class="fas fa-chart-bar"></i>
@@ -50,10 +50,10 @@
         </div>
         <div class="card">
             <div class="card-content">
-<!-- <<<<<<< HEAD -->   
+                <!-- <<<<<<< HEAD -->
                 <div class="number">{{ data.payment_count }}</div>
                 <div class="card-name" style="color: whitesmoke;">Payments</div>
-<!-- ======= -->
+                <!-- ======= -->
                 <!-- <div class="number">42</div>
                 <div class="card-name" style="color: white;">Payments</div> -->
             </div>
@@ -74,18 +74,16 @@
         </div>
         <div class="card">
             <div class="card-content">
-                <div class="number"><input type="number" placeholder="Enter Payment Amt." style="width: 70%;"></div>
-<!-- <<<<<<< HEAD
-                <div class="card-name" style="color: whitesmoke;">UPI Payment</div>
-======= -->
-                <div class="card-name" style="color: white;">UPI Payment</div>
-            </div>
-            <div class="pay-btn">
-                <button style="cursor: pointer;">Pay Now</button>
+                <form action="{% url 'base:contest_dashboard' %}" method="POST" id="update_upi">
+                    <!-- केतन भड़वा है  -->
+                    {% csrf_token %}
+                    <input type="number" name="upi_pay" placeholder="Payment Amt.">
+                    <input type="submit" style="cursor: pointer;" value="Pay">
+                </form>
             </div>
         </div>
     </div>
-<!-- <<<<<<< HEAD
+    <!-- <<<<<<< HEAD
     <div class="charts" >
         <div class="chart" style="background-color: black;">
             <h2 style="color: whitesmoke">Savings (since you started this contest)</h2>
